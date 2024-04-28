@@ -1,5 +1,5 @@
 import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { register } from "./operations";
+import { login, refreshUser, register } from "./operations";
 
 
 // export const selectFilteredContacts = createSelector(
@@ -41,6 +41,35 @@ const authSlice = createSlice({
       state.token = action.payload.token;
     })
     .addCase(register.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+    })
+    .addCase(login.pending, (state) => {
+      state.isLoading = true;
+      state.isError = false;
+    })
+    .addCase(login.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.isSignedIn = true;
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+    })
+    .addCase(login.rejected, (state) => {
+      state.isLoading = false;
+      state.isError = true;
+    })
+    .addCase(refreshUser.pending, (state) => {
+      state.isLoading = true;
+      state.isError = false;
+    })
+    .addCase(refreshUser.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.isError = false;
+      state.isSignedIn = true;
+      state.user = action.payload;
+    })
+    .addCase(refreshUser.rejected, (state) => {
       state.isLoading = false;
       state.isError = true;
     })

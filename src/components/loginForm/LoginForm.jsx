@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import * as Yup from "yup";
 import { login } from '../redux/auth/operations';
 
-// import { login } from '../../components/redux/auth/operations';
 
 import css from "./LoginForm.module.css"
 
