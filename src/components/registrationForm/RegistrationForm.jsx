@@ -22,7 +22,6 @@ const RegistrationForm= () => {
 
   const handleSubmit = (values, actions) => {
     dispatch(register(values));
-    // console.log(values)
     actions.resetForm();
   };
 
@@ -42,7 +41,6 @@ const RegistrationForm= () => {
               type="text"
               name="name"
             />
-            {/* <ErrorMessage component="p" name="name" render={msg => <p className={css.error}>{msg}</p>}/> */}
           </label>
           <br />
           <label>
@@ -53,7 +51,6 @@ const RegistrationForm= () => {
               type="email"
               name="email"
             />
-            {/* <ErrorMessage component="p" name="number" render={msg => <p className={css.error}>{msg}</p>}/> */}
           </label>
           <br />
           <label>
@@ -64,7 +61,6 @@ const RegistrationForm= () => {
               type="password"
               name="password"
             />
-            {/* <ErrorMessage component="p" name="number" render={msg => <p className={css.error}>{msg}</p>}/> */}
           </label>
           <br />
           <button type="submit">Add new user</button>
