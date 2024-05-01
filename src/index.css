@@ -7,7 +7,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
+  width: 100%;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
@@ -30,6 +30,7 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  width: 100%;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -70,4 +71,32 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+button:hover {
+  border-color: rgba(51, 51, 51, 0.22);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
 }

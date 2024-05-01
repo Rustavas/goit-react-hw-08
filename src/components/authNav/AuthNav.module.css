@@ -1,6 +1,7 @@
 .authNav{
   display: flex;
   grid-column-gap: 15px;
+  align-items: center;
 }
 .active{
   color: red;

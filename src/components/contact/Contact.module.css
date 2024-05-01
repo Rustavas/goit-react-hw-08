@@ -1,0 +1,17 @@
+.item {
+  display: flex;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 10px;
+}
+.contactData {
+  margin: auto 0;
+}
+p:not(:last-child) {
+  margin-bottom: 5px;
+}
+.deleteContactBtn {
+  margin: auto 0 auto auto;
+  padding: 5px 10px;
+}

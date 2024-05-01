@@ -1,4 +1,4 @@
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 
 import Loader from "./components/loader/Loader"
 import "./App.css";
@@ -12,9 +12,12 @@ import Layout from "./components/layout/Layout";
 import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { refreshUser } from "./components/redux/auth/operations";
+import RestrictedRoute from "./components/restrictedRoute/RestrictedRoute";
+import PrivateRoute from "./components/privateRoute/PrivateRoute";
 
 function App() {
 const dispatch = useDispatch();
+
 useEffect(() => {
   dispatch(refreshUser())
 }, [dispatch])
@@ -25,9 +28,9 @@ useEffect(() => {
         <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/register" element={<RegistrationPage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/contacts" element={<ContactsPage />} />
+            <Route path="/contacts" element={<PrivateRoute><ContactsPage /></PrivateRoute>} />
+            <Route path="/register" element={<RestrictedRoute><RegistrationPage /></RestrictedRoute>} />
+            <Route path="/login" element={<RestrictedRoute><LoginPage /></RestrictedRoute>} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>

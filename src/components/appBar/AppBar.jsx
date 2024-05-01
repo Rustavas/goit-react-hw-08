@@ -6,7 +6,8 @@ import UserMenu from "../userMenu/UserMenu"
 
 import css from "./AppBar.module.css"
 const AppBar = () => {
-  const isSignedIn = useSelector(selectIsSignedIn)
+  const isSignedIn = useSelector(selectIsSignedIn);
+
   return (
     <nav>
       <Navigation />
