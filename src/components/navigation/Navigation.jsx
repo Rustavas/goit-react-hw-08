@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom"
 import clsx from "clsx";
+import { useSelector } from "react-redux";
+
+import { selectIsSignedIn } from "../../redux/auth/selector";
 
 import css from "./Navigation.module.css"
-import { selectIsSignedIn } from "../redux/auth/selector";
-import { useSelector } from "react-redux";
 
 const Navigation = () => {
   const isSignedIn = useSelector(selectIsSignedIn);

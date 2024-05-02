@@ -1,9 +1,11 @@
 import { useSelector } from "react-redux"
+
 import AddContactForm from "../../components/addContactForm/AddContactForm"
 import Contacts from "../../components/contacts/Contacts"
 import ErrorMessage from "../../components/errorMessage/ErrorMessage"
 import Loader from "../../components/loader/Loader"
-import { selectPhonebookIsError, selectPhonebookIsLoading } from "../../components/redux/contacts/selector"
+import { selectPhonebookIsError, selectPhonebookIsLoading } from "../../redux/contacts/selector"
+
 import SearchBox from "../../components/searchBox/SearchBox"
 
 import css from "./ContactsPage.module.css"

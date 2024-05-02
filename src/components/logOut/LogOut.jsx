@@ -1,6 +1,5 @@
-import { useEffect } from "react";
 import { useDispatch } from "react-redux"
-import { logout } from "../redux/auth/operations";
+import { logout } from "../../redux/auth/operations";
 
 import css from "./LogOut.module.css"
 
